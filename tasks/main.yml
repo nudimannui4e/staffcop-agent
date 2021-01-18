@@ -1,0 +1,12 @@
+---
+# tasks file for staffcop-agent-update
+  - name: Скачивание агента и его установка
+    hosts: do
+
+    tasks:
+            - get_url:
+                    url: http://10.0.0.17/agent-install-0.8.0-master-[10.0.0.17].sh
+                    dest: /tmp/agent-install-0.8.0-master-[10.0.0.17].sh
+                    mode: '0777'
+            - command: "/tmp/agent-install-0.8.0-master-[10.0.0.17].sh"
+
